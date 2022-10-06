@@ -49,8 +49,34 @@ export default {
   created() {
     const userItem = this.$route.params.id;
     this.$store.dispatch("FETCH_ITEM", userItem);
-  }
+  },
+  // directives: {
+  //   inserted(el) {
+  //     const anchors = el.querySelectorAll('a')
+
+  //     anchors.forEach((anchor) => anchor.target = "_blank");
+  //   }
+  // }
+  // target() {
+  //   const anchors = document.getElementsByTagName("a");
+  //   console.log(anchors);
+  //   for (let i = 0; i < anchors.length; i++) {
+  //     anchors[i].setAttribute("target", "_blank")
+  //   }
+  // }
 }
+  // Vue.directive("links-in-new-window", {
+  //   inserted: function(el) {
+  //     const anchors = el.querySelectorAll("a");
+  //     anchors.forEach((anchor) => anchor.target="_blank");
+  //   }
+  // });
+// const anchors = document.getElementsByTagName("a");
+// console.log(anchors);
+// for (let i = 0; i < anchors.length; i++) {
+//   anchors[i].setAttribute("target", "_blank")
+// }
+// document.querySelectorAll("a").setAttribute("target_blank");
 </script>
 
 <style scoped>

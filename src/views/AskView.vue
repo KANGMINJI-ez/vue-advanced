@@ -14,11 +14,15 @@
 
 <script>
 import listItem from '../components/ListItem.vue';
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, createLogger } from 'vuex';
+// import bus from "../utils/bus.js";
+import ListMixin from "../mixins/ListMixins.js";
 export default {
   components: {
     listItem,
   },
+  mixins: [ListMixin],
+  // mixins: [ListMixin],
   computed: {
     // #3
     ...mapGetters([
@@ -34,10 +38,23 @@ export default {
     //   return this.$store.state.ask;
     // }
   },
-  created() {
-    this.$store.dispatch("FETCH_ASK");
-  }
+  // mounted() {
+  //   bus.$emit("end:spinner");
+  // },
+  // created() {
+  //   bus.$emit("start:spinner");
 
+  //   setTimeout(() => {
+  //     this.$store.dispatch("FETCH_ASK")
+  //     .then(() => {
+  //       console.log('fetched');
+  //       bus.$emit("end:spinner");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //   }, 3000);
+  // },
 }
 </script>
 

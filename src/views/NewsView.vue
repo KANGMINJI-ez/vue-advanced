@@ -6,14 +6,27 @@
 
 <script>
 import ListItem from '../components/ListItem.vue';
+import ListMixin from '../mixins/ListMixins.js';
+// import ListMixin from "../mixins/ListMixins.js";
 
 export default {
   components: {
     ListItem,
   },
+  mixins: [ListMixin],
+  // mixins: [ListMixin],
   created() {
-    this.$store.dispatch("FETCH_NEWS");
-
+    // bus.$emit("start:spinner");
+    // setTimeout(() => {
+    // this.$store.dispatch("FETCH_NEWS")
+    // .then(() => {
+    //   console.log('fetched');
+    //   bus.$emit("end:spinner");
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // });
+    // }, 3000);
     // var vm = this;
     // console.log("호출 전: ", this);
 
@@ -25,7 +38,7 @@ export default {
     // .catch(function(error) {
     //   console.log(error);
     // })
-  }
+  },
 }
 </script>
 
